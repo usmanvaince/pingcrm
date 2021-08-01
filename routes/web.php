@@ -1,12 +1,8 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\PatientsController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\ImagesController;
-use App\Http\Controllers\OrganizationsController;
-use App\Http\Controllers\ReportsController;
-use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +33,10 @@ Route::delete('logout', [AuthenticatedSessionController::class, 'destroy'])
 
 Route::get('/', [DashboardController::class, 'index'])
     ->name('dashboard')
+    ->middleware('auth');
+
+Route::get('/patients', [PatientsController::class, 'index'])
+    ->name('patients')
     ->middleware('auth');
 
 
