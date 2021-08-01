@@ -34,7 +34,7 @@ npm run dev
 Setup configuration:
 
 ```sh
-cp .env.example .env
+cp .env .env
 ```
 
 Generate application key:
